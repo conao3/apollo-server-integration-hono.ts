@@ -1,0 +1,51 @@
+{
+  "name": "@conao3/apollo-server-integration-hono",
+  "version": "0.1.0",
+  "description": "Apollo Server integration for Hono",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conao3/apollo-server-integration-hono.ts.git"
+  },
+  "keywords": [
+    "apollo",
+    "apollo-server",
+    "graphql",
+    "hono"
+  ],
+  "type": "module",
+  "packageManager": "pnpm@12.9.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "example": "node --watch --watch-preserve-output example/server.ts",
+    "prepare": "node scripts/install-hooks.mjs && vp config --no-agent"
+  },
+  "peerDependencies": {
+    "@apollo/server": "^5.0.0",
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "@apollo/server": "^5.5.1",
+    "@apollo/server-integration-testsuite": "^5.5.1",
+    "@hono/node-server": "^2.1.5",
+    "@jest/globals": "^30.5.2",
+    "@swc/core": "^1.16.20",
+    "@swc/jest": "^0.2.39",
+    "@types/node": "^26.6.6",
+    "graphql": "^16.14.2",
+    "hono": "^4.13.14",
+    "jest": "^30.5.2",
+    "vite-plus": "1.4.0"
+  }
+}
