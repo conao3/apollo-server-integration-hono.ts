@@ -12,6 +12,10 @@ on:
           - minor
           - major
 
+concurrency:
+  group: submit
+  cancel-in-progress: false
+
 jobs:
   version-bump:
     name: Version Bump
