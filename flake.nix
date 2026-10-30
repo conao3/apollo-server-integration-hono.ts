@@ -58,7 +58,7 @@
 
           build = pkgs.stdenv.mkDerivation (finalAttrs: {
             pname = "apollo-server-integration-hono";
-            version = "0.1.0";
+            version = (pkgs.lib.importJSON ./package.json).version;
             src = self;
 
             pnpmDeps = pkgs.fetchPnpmDeps {
