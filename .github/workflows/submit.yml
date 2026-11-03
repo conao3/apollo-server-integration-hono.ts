@@ -26,7 +26,7 @@ jobs:
     outputs:
       new_version: ${{ steps.bump.outputs.new_version }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - id: bump
@@ -78,14 +78,14 @@ jobs:
       name: npm
       url: https://www.npmjs.com/package/@conao3/apollo-server-integration-hono
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
         with:
           ref: v${{ needs.version-bump.outputs.new_version }}
       - uses: cachix/install-nix-action@v31.11.3
       - run: nix develop --command vp install
       - run: nix develop --command vp run check
       - run: nix develop --command vp pack
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: 26
           registry-url: https://registry.npmjs.org
